@@ -15,6 +15,9 @@ import com.ny.nyarticle.ui.mainScreen.adapter.ListAdapter
 import com.ny.nyarticle.ui.mainScreen.viewmodel.MainViewModel
 import com.ny.nyarticle.utils.ConnectionLiveData
 import com.ny.nyarticle.utils.DialogAlert
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 import retrofit2.Response.error
 
 class MainActivity : AppCompatActivity() {

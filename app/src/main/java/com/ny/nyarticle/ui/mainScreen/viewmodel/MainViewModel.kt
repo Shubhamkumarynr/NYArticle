@@ -2,7 +2,9 @@ package com.ny.nyarticle.ui.mainScreen.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.ny.nyarticle.interfaces.DataResponse
 import com.ny.nyarticle.model.DataModel
+import com.ny.nyarticle.network.CommonNetworkRequest
 
 class MainViewModel : ViewModel(), DataResponse {
 
