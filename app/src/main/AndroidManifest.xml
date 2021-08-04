@@ -12,16 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".ui.detailScreen.DetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".ui.mainScreen.ui.MainActivity"
-            android:exported="true">
+            android:name=".ui.splashScreen.SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".ui.detailScreen.DetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.mainScreen.ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar">
+
         </activity>
     </application>
 

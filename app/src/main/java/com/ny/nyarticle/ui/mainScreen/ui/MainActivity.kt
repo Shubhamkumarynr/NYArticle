@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        initToolbar()
+        initToolbar()
         model = ViewModelProviders.of(this).get(MainViewModel::class.java)
         networkInfo = ConnectionLiveData(this)
 
@@ -46,12 +46,12 @@ class MainActivity : AppCompatActivity() {
         } else showNetworkError()
     }
 
-//    private fun initToolbar() {
-//        setSupportActionBar(toolbar)
-//        toolbar.setNavigationOnClickListener {
-//            drawer_layout.openDrawer(GravityCompat.START)
-//        }
-//    }
+    private fun initToolbar() {
+        setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener {
+            drawer_layout.openDrawer(GravityCompat.START)
+        }
+    }
 
     /*Set Recycler view properties and Display*/
     private fun setRecyclerview() {
