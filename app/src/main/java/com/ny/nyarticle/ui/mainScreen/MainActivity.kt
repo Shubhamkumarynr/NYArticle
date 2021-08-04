@@ -1,4 +1,4 @@
-package com.ny.nyarticle.ui
+package com.ny.nyarticle.ui.mainScreen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
