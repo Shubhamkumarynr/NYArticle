@@ -44,7 +44,7 @@ class DataModel {
         var abstract: String? = null
         @SerializedName("published_date")
         @Expose
-        var publishedDate: String? = null
+        var published_Date: String? = null
         @SerializedName("source")
         @Expose
         var source: String? = null
@@ -57,6 +57,12 @@ class DataModel {
         @SerializedName("views")
         @Expose
         var views: Int? = null
+
+        inner class media{
+            inner class media_metadata{
+                var url: String? = null
+            }
+        }
 
     }
 }

@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.ny.nyarticle.R
 import com.ny.nyarticle.model.DataModel
+import com.ny.nyarticle.ui.detailScreen.DetailActivity
 import com.ny.nyarticle.ui.mainScreen.viewmodel.MainViewModel
 
 class ListAdapter(
@@ -33,6 +34,7 @@ class ListAdapter(
     /*Set data in view*/
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val data = listData[position]
+        val data2 = listData[position]
 
         onbind(holder, data) //set data in list row
 
@@ -41,16 +43,17 @@ class ListAdapter(
     private fun onbind(
         holder: ListViewHolder,
         data: DataModel.Result?
+
     ) {
         holder.tvTitle.text = data?.title
         holder.tvDescription.text = data?.source
-        holder.tvDate.text = data?.publishedDate
+        holder.tvDate.text = data?.published_Date
 //        https:\/\/static01.nyt.com\/images\/2019\/12\/16\/opinion\/16webster\/merlin_163910355_fa50244e-1882-4add-bad1-ea314264bba0-thumbStandard.jpg
         /*Images url not working in json data, So displaying placeholder*/
 //        val url = data?.url
         Glide.with(mCtx)
             .load("")
-            .placeholder(R.mipmap.ic_launcher_round)
+            .placeholder(R.drawable.ic_nytimes_icon)
             .apply(RequestOptions.circleCropTransform())//load image in circular shape
             .into(holder.ivAvatar)
         holder.itemView.setOnClickListener {
@@ -74,11 +77,12 @@ class ListAdapter(
     private fun onDetailScreen(
         url: String?,
         tv_title: TextView
+
     ) {
         val intent = Intent(mCtx, DetailActivity::class.java)
         intent.putExtra("url", url)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val v2 = android.support.v4.util.Pair(
+            val v2 = androidx.core.util.Pair(
                 tv_title as View,
                 mCtx.resources.getString(R.string.transition_string)
             )
