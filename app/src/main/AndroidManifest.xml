@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NYArticle">
         <activity
-            android:name=".ui.mainScreen.MainActivity"
+            android:name=".ui.mainScreen.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
