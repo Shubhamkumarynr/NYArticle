@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,6 +62,9 @@ class ListAdapter(
             onDetailScreen(data?.url, holder.tvTitle)
         }
     }
+   fun getItem(position: Int): DataModel.Result? {
+        return listData[position]
+    }
 
     override fun getItemCount(): Int {
         return listData.size
@@ -83,17 +87,7 @@ class ListAdapter(
     ) {
         val intent = Intent(mCtx, DetailActivity::class.java)
         intent.putExtra("url", url)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val v2 = androidx.core.util.Pair(
-                tv_title as View,
-                mCtx.resources.getString(R.string.transition_string)
-            )
-            val options =
-                ActivityOptionsCompat.makeSceneTransitionAnimation(mCtx as Activity, v2)
-            mCtx.startActivity(intent, options.toBundle())
-        } else {
             mCtx.startActivity(intent)
-        }
 
     }
 

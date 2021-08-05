@@ -1,9 +1,11 @@
 package com.ny.nyarticle.ui.mainScreen.ui
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.Observer
@@ -23,12 +25,18 @@ import retrofit2.Response.error
 
 class MainActivity : AppCompatActivity() {
     private var data: ArrayList<DataModel.Result?> = ArrayList()
-    private lateinit var adapter: ListAdapter
+    lateinit var adapter: ListAdapter
     private lateinit var networkInfo: ConnectionLiveData
     private lateinit var model: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= 21) {
+            val window = this.window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.statusBarColor = this.resources.getColor(R.color.colorPrimaryDark)
+        }
         setContentView(R.layout.activity_main)
 
         initToolbar()
