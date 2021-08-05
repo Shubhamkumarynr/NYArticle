@@ -2,7 +2,7 @@
 
 Simple app to hit the NY Times Most Popular Articles API and show a list of articles.
 
-https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?apikey=sample-key To use this api you need to generate SAMPLE KEY from https://developer.nytimes.com/get-started
+https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=sample-key To use this api you need to generate SAMPLE KEY from https://developer.nytimes.com/get-started
 
 ## The app has following packages:
 1.interfaces - Contains the data response fo API</br>
