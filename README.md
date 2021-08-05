@@ -17,3 +17,9 @@ https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=sample-key To u
 * Architecture pattern - MVVM pattern
 * Internet network handling - displaying snackbar for the network status
 
+## Jacoco and Static Code Analysis
+
+You can generate code coverage report for the test cases (using Jacoco) and Static code anyalysis report by running following command locally in the root of the project repository.
+  ./gradlew testDebugUnitTest
+
+
