@@ -18,6 +18,9 @@ class DataModel {
     var results: List<Result>? = null
 
     inner class Result {
+        @SerializedName("uri")
+        @Expose
+        var uri: String? = null
         @SerializedName("url")
         @Expose
         var url: String? = null
@@ -57,9 +60,20 @@ class DataModel {
         @SerializedName("views")
         @Expose
         var views: Int? = null
+        @SerializedName("media")
+        @Expose
+        var media: List<Result.Media>? = null
 
-        inner class media{
+        inner class Media{
+            @SerializedName("type")
+            @Expose
+            var type: String? = null
+            @SerializedName("subtype")
+            @Expose
+            var subtype: String? = null
             inner class media_metadata{
+                @SerializedName("url")
+                @Expose
                 var url: String? = null
             }
         }

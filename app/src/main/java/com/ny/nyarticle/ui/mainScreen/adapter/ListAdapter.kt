@@ -1,5 +1,6 @@
 package com.ny.nyarticle.ui.mainScreen.adapter
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -74,6 +75,7 @@ class ListAdapter(
     }
 
 
+    @SuppressLint("ObsoleteSdkInt")
     private fun onDetailScreen(
         url: String?,
         tv_title: TextView

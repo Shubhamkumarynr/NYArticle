@@ -24,7 +24,7 @@ class RetrofitClientInstance {
                 .writeTimeout(2, TimeUnit.MINUTES)
                 .addInterceptor(interceptor).build()
             retrofit = Retrofit.Builder()
-                .baseUrl(CONSTANTS.BASE_URL)
+                .baseUrl("https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build()

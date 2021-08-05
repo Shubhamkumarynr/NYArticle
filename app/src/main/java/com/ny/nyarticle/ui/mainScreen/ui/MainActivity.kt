@@ -3,6 +3,7 @@ package com.ny.nyarticle.ui.mainScreen.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.Observer
@@ -75,7 +76,9 @@ class MainActivity : AppCompatActivity() {
                 data.addAll(rowList)
                 adapter.notifyDataSetChanged()
 
-            } else Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
+            } else{
+                Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
+            }
 
         })
     }
